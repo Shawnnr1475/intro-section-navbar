@@ -5,35 +5,188 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./style.css">
   
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Features
-  Company
-  Careers
-  About
+  <main class="main-container">
+    <header class="header-container">
+      <nav class="navbar-container">
+        <div class="logo-container">
+          <label>snap</label>
+        </div>
+        <div class="nav-links">
+          <p class="features-btn">Features <span><img src="./images/icon-arrow-down.svg" alt=""></span></p>
+          <div class="features-drop-down">
+            <div class="row todo-list">
+              <p><span><img src="./images/icon-todo.svg" alt=""></span>Todo List</p>
+            </div>
+            <div class="row calendar">
+              <p><span><img src="./images/icon-calendar.svg" alt=""></span>Calendar</p>
+            </div>
+            <div class="row reminders">
+              <p><span><img src="./images//icon-reminders.svg" alt=""></span>Remainders</p>
+            </div>
+            <div class="row planning">
+              <p><span><img src="./images/icon-planning.svg" alt=""></span>Planning</p>
+            </div>
+          </div>
+          <p class="company-btn">Company <span><img src="./images/icon-arrow-down.svg" alt=""></span></p>
+          <div class="company-drop-down">
+            <p>History</p>
+            <p>Our Team</p>
+            <p>Blog</p>
+          </div>
+          <a href="#">Careers</a>
+          <a href="#">About</a>
+        </div>
+        <div class="nav-buttons-container">
+          <p class="btn btn-login">Login</p>
+          <p class="btn btn-register">Register</p>
+        </div>
+        <div class="menu-btn-container">
+          <img src="./images/icon-menu.svg" alt="">
+        </div>
+      </nav>
+      <div class="meun-expand-container">
+          <div class="content-menu">
+            <img src="./images/icon-close-menu.svg" alt="">
+            <div class="menu-links">
+              <p class="features-btn menu">Features <span><img src="./images/icon-arrow-down.svg" alt=""></span></p>
+              <div class="features-drop-down-menu">
+                <div class="row todo-list">
+                  <p><span><img src="./images/icon-todo.svg" alt=""></span>Todo List</p>
+                </div>
+                <div class="row calendar">
+                  <p><span><img src="./images/icon-calendar.svg" alt=""></span>Calendar</p>
+                </div>
+                <div class="row reminders">
+                  <p><span><img src="./images//icon-reminders.svg" alt=""></span>Remainders</p>
+                </div>
+                <div class="row planning">
+                  <p><span><img src="./images/icon-planning.svg" alt=""></span>Planning</p>
+                </div>
+              </div>
+              <p class="company-btn menu">Company <span><img src="./images/icon-arrow-down.svg" alt=""></span></p>
+              <div class="company-drop-down-menu">
+                <p>History</p>
+                <p>Our Team</p>
+                <p>Blog</p>
+              </div>
+              <a href="#">Careers</a>
+              <a href="#">About</a>
+            </div>
+            <div class="btn-menu-container">
+              <p class="btn btn-login menu">Login</p>
+              <p class="btn btn-register menu">Register</p>
+            </div>
+          </div>
+      </div>
+      <section class="intro-sec-container">
+        <div class="content-container">
+          <h1>Make remote work</h1>
+          <p>  Get your team in sync, no matter your location. Streamline processes, 
+            create team rituals, and watch productivity soar.</p>
+          <button class="btn btn-learn-more">Learn more</button>
+          <div class="bottom-svgs-container">
+            <img src="./images/client-databiz.svg" alt="">
+            <img src="./images/client-audiophile.svg" alt="">
+            <img src="./images/client-meet.svg" alt="">
+            <img src="./images/client-maker.svg" alt="">
+          </div>
 
-  Login
-  Register
+        </div>
+        <div class="banner-img-container">
+          <img class="hero-desktop" src="./images/image-hero-desktop.png" alt="">
+          <img class="hero-mobile" src="./images/image-hero-mobile.png" alt="">
+        </div>
+      </section>
+    </header>
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/Shawnnr1475" target="_blank">Shawn Rabebe</a>.
+    </footer>
+  </main>
+  <script>
+    const featuresBtn = document.querySelector(".features-btn")
+    const companyBtn = document.querySelector(".company-btn")
 
-  Make remote work
+    const featuresDropDown = document.querySelector(".features-drop-down")
+    const companyDropDown = document.querySelector(".company-drop-down")
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
+    //Navlink
+    featuresBtn.addEventListener("click",()=>{
+      featuresDropDown.classList.toggle("active")
+      const imageUpArrow = document.querySelector(".features-btn span img")
+      if(featuresDropDown.classList.contains("active")){
+        imageUpArrow.setAttribute("src","./images/icon-arrow-up.svg")
+      }
+      else{
+        imageUpArrow.setAttribute("src","./images/icon-arrow-down.svg")
+      }
+    })
 
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    companyBtn.addEventListener("click",()=>{
+      companyDropDown.classList.toggle("active")
+      const imageUpArrow = document.querySelector(".company-btn span img")
+      if(companyDropDown.classList.contains("active")){
+        imageUpArrow.setAttribute("src","./images/icon-arrow-up.svg")
+      }
+      else{
+        imageUpArrow.setAttribute("src","./images/icon-arrow-down.svg")
+      }
+    })
+
+    //Menu
+    const featuresBtnMenu = document.querySelector(".features-btn.menu")
+    const companyBtnMeun = document.querySelector(".company-btn.menu")
+    
+    const featuresDropDownMenu = document.querySelector(".features-drop-down-menu")
+    const companyDropDownMenu = document.querySelector(".company-drop-down-menu")
+    
+    featuresBtnMenu.addEventListener("click",()=>{
+      featuresDropDownMenu.classList.toggle("active")
+      const imageUpArrow = document.querySelector(".features-btn.menu span img")
+      if(featuresDropDownMenu.classList.contains("active")){
+        imageUpArrow.setAttribute("src","./images/icon-arrow-up.svg")
+      }
+      else{
+        imageUpArrow.setAttribute("src","./images/icon-arrow-down.svg")
+      }
+    })
+
+    companyBtnMeun.addEventListener("click",()=>{
+      companyDropDownMenu.classList.toggle("active")
+      const imageUpArrow = document.querySelector(".company-btn.menu span img")
+      if(companyDropDownMenu.classList.contains("active")){
+        imageUpArrow.setAttribute("src","./images/icon-arrow-up.svg")
+      }
+      else{
+        imageUpArrow.setAttribute("src","./images/icon-arrow-down.svg")
+      }
+    })
+
+
+    //Menu Events
+
+    const menuBtn = document.querySelector(".menu-btn-container img")
+    const menuContainer = document.querySelector(".meun-expand-container")
+    const closeMenuBtn = document.querySelector(".content-menu > img")
+
+    //Show Menu
+    menuBtn.addEventListener("click",()=>{
+       menuContainer.style.display = "flex"
+    })
+
+    //Collapse Menu
+    closeMenuBtn.addEventListener("click",()=>{
+       menuContainer.style.display = "none"
+    })
+
+  </script>
 </body>
 </html>
